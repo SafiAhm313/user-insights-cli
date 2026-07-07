@@ -1,4 +1,5 @@
 
+// user-insights-cli: fetches users, posts, and todos, then prints a sorted report.
 const BASE_URL = "https://jsonplaceholder.typicode.com";
 
 async function fetchJSON(path) {
