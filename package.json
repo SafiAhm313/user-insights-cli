@@ -1,0 +1,8 @@
+
+{
+    "name": "user-insights-cli",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    }
+}
