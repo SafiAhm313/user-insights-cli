@@ -9,7 +9,7 @@ interface TaskListProps {
 
 function TaskList({ tasks, onToggle, onDelete }: TaskListProps) {
   return (
-    <ul>
+    <ul className="task-list">
       {tasks.map((task) => (
         <TaskItem
           key={task.id}

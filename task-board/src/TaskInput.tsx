@@ -10,10 +10,10 @@ function TaskInput({ onAddTask }: TaskInputProps) {
   function handleSubmit() {
     const trimmed = title.trim();
     if (trimmed === '') {
-      return; // reject empty/whitespace-only, don't clear input
+      return;
     }
     onAddTask(trimmed);
-    setTitle(''); // clear input only after a successful add
+    setTitle('');
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
@@ -23,7 +23,7 @@ function TaskInput({ onAddTask }: TaskInputProps) {
   }
 
   return (
-    <div>
+    <div className="task-input">
       <input
         type="text"
         value={title}

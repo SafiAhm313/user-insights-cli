@@ -3,6 +3,7 @@ import type { Task, Filter } from './types';
 import TaskInput from './TaskInput';
 import TaskList from './TaskList';
 import FilterBar from './FilterBar';
+import './App.css';
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>(() => {
@@ -58,10 +59,14 @@ function App() {
       <h1>Task Board</h1>
       <TaskInput onAddTask={handleAddTask} />
       <FilterBar currentFilter={filter} onFilterChange={setFilter} />
-      <p>
+      <p className="task-counts">
         Total: {totalCount} | Active: {activeCount} | Completed: {completedCount}
       </p>
-      <TaskList tasks={filteredTasks} onToggle={handleToggle} onDelete={handleDelete} />
+      {filteredTasks.length === 0 ? (
+        <p className="empty-state">No tasks here yet.</p>
+      ) : (
+        <TaskList tasks={filteredTasks} onToggle={handleToggle} onDelete={handleDelete} />
+      )}
     </div>
   );
 }

@@ -7,7 +7,7 @@ interface FilterBarProps {
 
 function FilterBar({ currentFilter, onFilterChange }: FilterBarProps) {
   return (
-    <div>
+    <div className="filter-bar">
       <button
         className={currentFilter === 'all' ? 'active' : ''}
         onClick={() => onFilterChange('all')}
